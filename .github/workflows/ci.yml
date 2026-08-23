@@ -23,6 +23,12 @@ jobs:
         run: cargo test --all-targets
       - name: Demo
         run: cargo run --example demo
+      - name: Build.rs generator smoke test
+        run: cargo check --manifest-path tests/fixtures/build-script/Cargo.toml
+      - name: Verify build.rs generated JSON
+        run: test -f tests/fixtures/build-script/generated/locales/en/app.json
+      - name: Verify build.rs generated FTL
+        run: test -f tests/fixtures/build-script/generated/en/main.ftl
 
   gpui:
     name: GPUI feature (latest stable)
