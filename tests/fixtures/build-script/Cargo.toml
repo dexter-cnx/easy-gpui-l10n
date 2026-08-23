@@ -1,0 +1,11 @@
+[package]
+name = "easy-gpui-l10n-build-script-smoke"
+version = "0.0.0"
+edition = "2021"
+publish = false
+build = "build.rs"
+
+[build-dependencies]
+easy-gpui-l10n = { path = "../../.." }
+
+[workspace]
