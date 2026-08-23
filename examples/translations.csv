@@ -1,0 +1,5 @@
+key,en,th,zh-CN
+hello,Hello,สวัสดี,你好
+settings.title,Settings,ตั้งค่า,设置
+dialog.delete.title,Delete {name}?,ลบ {name}?,删除 {name}？
+only.english,English fallback,,
