@@ -1,14 +1,15 @@
 use anyhow::{anyhow, Context, Result};
 use std::collections::HashMap;
 
-pub(crate) fn parse_csv(
-    csv_content: &str,
-) -> Result<HashMap<String, HashMap<String, String>>> {
+pub(crate) fn parse_csv(csv_content: &str) -> Result<HashMap<String, HashMap<String, String>>> {
     let mut reader = csv::ReaderBuilder::new()
         .trim(csv::Trim::All)
         .from_reader(csv_content.as_bytes());
 
-    let headers = reader.headers().context("failed to read CSV headers")?.clone();
+    let headers = reader
+        .headers()
+        .context("failed to read CSV headers")?
+        .clone();
     if headers.len() < 2 {
         return Err(anyhow!(
             "translations CSV must contain `key` plus at least one locale column"
