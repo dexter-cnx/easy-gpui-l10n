@@ -162,6 +162,9 @@ mod tests {
     #[test]
     fn macro_supports_named_args() {
         init_from_csv(CSV, "en").unwrap();
-        assert_eq!(crate::tr!("dialog.delete.title", name = "Dexter"), "Delete Dexter?");
+        assert_eq!(
+            crate::tr!("dialog.delete.title", name = "Dexter"),
+            "Delete Dexter?"
+        );
     }
 }
