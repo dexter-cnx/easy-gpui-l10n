@@ -6,8 +6,8 @@ on:
   pull_request:
 
 jobs:
-  core:
-    name: Core
+  core-msrv:
+    name: Core (Rust 1.85 MSRV)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,14 +23,27 @@ jobs:
         run: cargo test --all-targets
       - name: Demo
         run: cargo run --example demo
+      - name: Build.rs generator smoke test
+        run: cargo check --manifest-path tests/fixtures/build-script/Cargo.toml
+      - name: Verify build.rs generated JSON
+        run: test -f tests/fixtures/build-script/generated/locales/en/app.json
+      - name: Verify build.rs generated FTL
+        run: test -f tests/fixtures/build-script/generated/en/main.ftl
 
   gpui:
-    name: GPUI feature
+    name: GPUI feature (latest stable)
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-        with:
-          toolchain: 1.85.0
       - name: Check GPUI integration
         run: cargo check --features gpui
+
+  package:
+    name: Cargo package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Verify publishable package
+        run: cargo package --allow-dirty

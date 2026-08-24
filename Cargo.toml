@@ -7,7 +7,7 @@ description = "CSV-first localization for Rust and GPUI, inspired by Flutter eas
 license = "MIT"
 readme = "README.md"
 keywords = ["i18n", "l10n", "gpui", "csv", "localization"]
-categories = ["internationalization", "localization"]
+categories = ["internationalization"]
 
 [features]
 default = []

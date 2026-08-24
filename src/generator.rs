@@ -56,8 +56,7 @@ pub fn generate_from_csv(csv_path: &str, out_dir: &str, format: Format) -> Resul
                 ftl.push_str(&fluent_value);
                 ftl.push('\n');
             }
-            fs::write(&path, ftl)
-                .with_context(|| format!("failed to write {}", path.display()))?;
+            fs::write(&path, ftl).with_context(|| format!("failed to write {}", path.display()))?;
         }
     }
 
@@ -65,7 +64,10 @@ pub fn generate_from_csv(csv_path: &str, out_dir: &str, format: Format) -> Resul
 }
 
 pub(crate) fn set_nested(root: &mut Value, dotted_key: &str, value: Value) -> Result<()> {
-    let parts: Vec<&str> = dotted_key.split('.').filter(|part| !part.is_empty()).collect();
+    let parts: Vec<&str> = dotted_key
+        .split('.')
+        .filter(|part| !part.is_empty())
+        .collect();
     if parts.is_empty() {
         return Err(anyhow!("translation key cannot be empty"));
     }
