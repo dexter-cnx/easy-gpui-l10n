@@ -6,6 +6,8 @@ rust-version = "1.85"
 description = "CSV-first localization for Rust and GPUI, inspired by Flutter easy_localization"
 license = "MIT"
 readme = "README.md"
+repository = "https://github.com/dexter-cnx/easy-gpui-l10n"
+homepage = "https://github.com/dexter-cnx/easy-gpui-l10n"
 keywords = ["i18n", "l10n", "gpui", "csv", "localization"]
 categories = ["internationalization"]
 

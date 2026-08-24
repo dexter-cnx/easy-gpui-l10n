@@ -47,3 +47,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Verify publishable package
         run: cargo package --allow-dirty
+      - name: Publish dry run
+        run: cargo publish --dry-run --allow-dirty
+      - name: Inspect packaged files
+        run: cargo package --list
