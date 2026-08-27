@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "title": "easy-gpui-l10n",
+    "tagline": "CSV-first localization for Rust and GPUI, inspired by Flutter easy_localization.",
+    "status": "active",
+    "version": "0.1"
+  },
+  "summary": {
+    "short": "easy-gpui-l10n is a CSV-first localization crate for Rust and GPUI with runtime translation, fallback locales, placeholders, and generated JSON or Fluent locale files.",
+    "long": "The crate keeps translation data in a reusable core independent from GPUI, supports dot-notation keys, runtime placeholders, missing-key fallback behavior, JSON and Fluent generation, and optional GPUI global integration."
+  },
+  "highlights": [
+    "Single CSV source of truth",
+    "Fallback locales and runtime placeholders",
+    "JSON and Fluent generation",
+    "Optional GPUI integration with frontend-neutral core"
+  ],
+  "tech": ["Rust", "GPUI", "CSV", "Fluent"],
+  "links": {
+    "repository": "https://github.com/dexter-cnx/easy-gpui-l10n",
+    "homepage": null,
+    "package": "https://crates.io/crates/easy-gpui-l10n",
+    "docs": null,
+    "demo": null
+  },
+  "updatedAt": "2026-08-27T00:00:00Z"
+}
